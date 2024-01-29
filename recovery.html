@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Volunteers</title>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <form action="login.html" id="form2" onsubmit="return validateForm()">
+      <h1>Reset your Password Here</h1>
+      <div class="input-control">
+        <label for="email">Email</label>
+        <input
+          type="text"
+          id="email3"
+          name="email3"
+          placeholder="please fill your Email"
+        />
+        <div class="error" id="emailError"></div>
+      </div>
+      <button type="submit">Submit</button>
+
+      <script>
+        function validateForm() {
+          // Reset error
+          document.getElementById("emailError").innerHTML = "";
+
+          // Get value
+          var email = document.getElementById("email3").value.trim();
+
+          // Validate email
+          var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailRegex.test(email)) {
+            document.getElementById("emailError").innerHTML = "Invalid email address";
+            return false;
+          }
+
+          // If everything is valid, the form will be submitted
+          return true;
+        }
+      </script>
+    </form>
+  </body>
+</html>
