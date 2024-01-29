@@ -36,28 +36,26 @@
 
     <script>
       function validateForm() {
-        // Reset errors
         document.getElementById("emailError").innerHTML = "";
         document.getElementById("passwordError").innerHTML = "";
 
-        // Get values
+
         var email = document.getElementById("email2").value.trim();
         var password = document.getElementById("password3").value.trim();
 
-        // Validate email
+
         var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(email)) {
           document.getElementById("emailError").innerHTML = "Invalid email address";
           return false;
         }
 
-        // Validate password (you can add more password validation logic here)
         if (password.length < 6) {
           document.getElementById("passwordError").innerHTML = "Password must be at least 6 characters";
           return false;
         }
 
-        // If everything is valid, the form will be submitted
+ 
         return true;
       }
     </script>
